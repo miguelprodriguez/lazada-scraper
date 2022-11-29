@@ -42,9 +42,8 @@ for i in range(pages_length):
     number = number + 1
     if number == pages_length:
         continue
-    
-    element = WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".ant-pagination-next")))
-    element.click()
+
+    driver.find_element(By.CSS_SELECTOR, ".ant-pagination-next").click()
     
     next_items_loading_buffer = 5
     time.sleep(next_items_loading_buffer)
