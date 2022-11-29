@@ -43,12 +43,12 @@ for i in range(pages_length):
     if number == pages_length:
         continue
     
-    next_page_button_classname = ".ant-pagination-next > button"
+    next_page_button_classname = ".ant-pagination-next"
     element = WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.CSS_SELECTOR, next_page_button_classname)))
     element.click()
     
-    loading_next_items_buffer = 5
-    time.sleep(loading_next_items_buffer)
+    next_items_loading_buffer = 5
+    time.sleep(next_items_loading_buffer)
 
 with open("data.csv", "w") as csvfile:
     writer = csv.DictWriter(csvfile, fieldnames = headers) 
